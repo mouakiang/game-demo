@@ -1,5 +1,5 @@
 /* Imports */
-import 
+import { renderVillain } from './utils.js';
 /* Get DOM Elements */
 const villainsEl = document.getElementById('villains');
 const playerHPEl = document.getElementById('player-hp');
@@ -8,8 +8,10 @@ const inputEl = document.getElementById('villain-input');
 const buttonEl = document.getElementById('villain-button');
 const defeatedCountEl = document.getElementById('defeated-count');
 /* State */
+let defeatedCount = 0;
+let playerHp = 10;
 
-const villains = [
+const villainsContainer = [
     {
         name: 'Bowser',
         hp: 5,
@@ -29,7 +31,41 @@ const villains = [
 function displayVillains() {
     villainsEl.textContent = '';
 
-    for (let villain of villains) {
+    for (let villain of villainsContainer) {
         const newVillainEl = renderVillain(villain);
+
+        newVillainEl.addEventListener('click', () => {
+            if (playerHp <= 0) {
+                alert('Mama Mia!');
+                return;
+            }
+
+            if (Math.random() > 0.5) {
+                alert('Lets a go! Mario hit' + villain.name);
+                villain.hp--;
+
+                if (villain.hp === 0) {
+                    defeatedCount++;
+                    defeatedCountEl.textContent = `You have defeated ${defeatedCount} villains`;
+                }
+            } else {
+                alert('You missed' + villain.name);
+            }
+            if (Math.random() > 0.5) {
+                alert(villain.name + 'Bwuahaha');
+                playerHp--;
+
+                if (playerHp === 0) {
+                    playerImgEl.classList.add('dead');
+                }
+            } else {
+                alert(villain.name + 'OK, that does it! Your are all gonna be Koopatized!');
+            }
+            playerHPEl.textContent = playerHp;
+
+            displayVillains();
+        });
+        villainsEl.append(newVillainEl);
     }
 }
+displayVillains();
