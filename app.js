@@ -69,14 +69,14 @@ function displayVillains() {
                 alert('You missed' + villain.name);
             }
             if (Math.random() > 0.5) {
-                alert(villain.name + 'Bwuahaha');
+                alert(villain.name + 'Bwuahaha, how does it feel to be hit back?!');
                 playerHp--;
 
                 if (playerHp === 0) {
                     playerImgEl.classList.add('dead');
                 }
             } else {
-                alert(villain.name + 'OK, that does it! Your are all gonna be Koopatized!');
+                alert(villain.name + 'I cant believe I missed! You are gonna be koopatized!');
             }
             playerHPEl.textContent = playerHp;
 
