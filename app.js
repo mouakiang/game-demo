@@ -58,7 +58,7 @@ function displayVillains() {
             }
 
             if (Math.random() > 0.5) {
-                alert('Lets a go! Mario hit' + villain.name);
+                alert('Lets a go! Mario hit' + ' ' + villain.name);
                 villain.hp--;
 
                 if (villain.hp === 0) {
@@ -66,17 +66,23 @@ function displayVillains() {
                     defeatedCountEl.textContent = `You have defeated ${defeatedCount} villains`;
                 }
             } else {
-                alert('You missed' + villain.name);
+                alert('You missed' + ' ' + villain.name);
             }
             if (Math.random() > 0.5) {
-                alert(villain.name + 'Bwuahaha, how does it feel to be hit back?!');
+                alert('Bwuahaha!' + ' ' + villain.name + ' ' + 'hit you back!');
                 playerHp--;
 
                 if (playerHp === 0) {
                     playerImgEl.classList.add('dead');
                 }
             } else {
-                alert(villain.name + 'I cant believe I missed! You are gonna be koopatized!');
+                alert(
+                    'You are gonna be koopatized!' +
+                        ' ' +
+                        villain.name +
+                        ' ' +
+                        'hit you back and missed'
+                );
             }
             playerHPEl.textContent = playerHp;
 
