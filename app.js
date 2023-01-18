@@ -11,7 +11,7 @@ const defeatedCountEl = document.getElementById('defeated-count');
 let defeatedCount = 0;
 let playerHp = 10;
 
-const villainsContainer = [
+const villains = [
     {
         name: 'Bowser',
         hp: 5,
@@ -26,12 +26,29 @@ const villainsContainer = [
     },
 ];
 /* Events */
+buttonEl.addEventListener('click', () => {
+    const villainName = inputEl.ariaValueMax;
 
+    if (!villainName) {
+        return;
+    }
+
+    const newVillain = {
+        name: villainName,
+        hp: Math.ceil(Math.random() * 3),
+    };
+
+    villains.push(newVillain);
+
+    inputEl.value = '';
+
+    displayVillains();
+});
 /* Display Functions */
 function displayVillains() {
     villainsEl.textContent = '';
 
-    for (let villain of villainsContainer) {
+    for (let villain of villains) {
         const newVillainEl = renderVillain(villain);
 
         newVillainEl.addEventListener('click', () => {
