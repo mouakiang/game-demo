@@ -7,5 +7,15 @@ export function renderVillain(villain) {
     nameEl.textContent = villain.name;
     hpEl.textContent = villain.hp;
 
-    if (villain.hp)
+    if (villain.hp > 0) {
+        emojiEl.textContent = '⭐';
+    } else {
+        emojiEl.textContent = '👻';
+    }
+
+    newVillainEl.classList.add('newVillain');
+
+    newVillainEl.append(nameEl, hpEl, emojiEl);
+
+    return newVillainEl;
 }
