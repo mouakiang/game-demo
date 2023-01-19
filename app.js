@@ -9,7 +9,7 @@ const buttonEl = document.getElementById('villain-button');
 const defeatedCountEl = document.getElementById('defeated-count');
 /* State */
 let defeatedCount = 0;
-let playerHp = 10;
+let playerHp = 1;
 
 const villains = [
     {
@@ -35,7 +35,7 @@ buttonEl.addEventListener('click', () => {
 
     const newVillain = {
         name: villainName,
-        hp: Math.ceil(Math.random() * 3),
+        hp: Math.ceil(Math.random() * 5),
     };
 
     villains.push(newVillain);
@@ -45,18 +45,19 @@ buttonEl.addEventListener('click', () => {
     displayVillains();
 });
 /* Display Functions */
+
 function displayVillains() {
     villainsEl.textContent = '';
 
     for (let villain of villains) {
-        const newVillainEl = renderVillain(villain);
+        const newVillainEl = renderVillain(villain, playerHp);
+        // newVillainEl.setAttribute('id', 'game-over-button');
 
         newVillainEl.addEventListener('click', () => {
             if (playerHp <= 0) {
                 alert('Mama Mia!');
                 return;
             }
-
             if (Math.random() > 0.5) {
                 alert('Lets a go! Mario hit' + ' ' + villain.name);
                 villain.hp--;
@@ -91,4 +92,5 @@ function displayVillains() {
         villainsEl.append(newVillainEl);
     }
 }
+
 displayVillains();

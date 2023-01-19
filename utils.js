@@ -1,5 +1,5 @@
-export function renderVillain(villain) {
-    const newVillainEl = document.createElement('li');
+export function renderVillain(villain, playerHp) {
+    const newVillainEl = document.createElement('button');
     const nameEl = document.createElement('p');
     const emojiEl = document.createElement('p');
     const hpEl = document.createElement('p');
@@ -12,7 +12,9 @@ export function renderVillain(villain) {
     } else {
         emojiEl.textContent = '👻';
     }
-
+    if (playerHp <= 0) {
+        newVillainEl.disabled = true;
+    }
     newVillainEl.classList.add('newVillain');
 
     newVillainEl.append(nameEl, hpEl, emojiEl);

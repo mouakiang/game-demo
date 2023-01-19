@@ -85,3 +85,7 @@ p {
     font-size: 1.5rem;
     color: white;
 }
+
+.disable {
+    pointer-events: none;
+}
