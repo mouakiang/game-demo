@@ -27,7 +27,7 @@ const villains = [
 ];
 /* Events */
 buttonEl.addEventListener('click', () => {
-    const villainName = inputEl.ariaValueMax;
+    const villainName = inputEl.value;
 
     if (!villainName) {
         return;

@@ -32,16 +32,20 @@ header .logo {
 
 main {
     padding: 20px;
+    background-image: url(../assets/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-#defeated-count {
+.defeated-count {
     width: 250px;
     height: 50px;
+    background-color: #e0102f;
 }
 
 .player-img {
-    width: 380px;
-    height: 300px;
+    width: 350px;
+    height: 250px;
 }
 
 .add-villain {
@@ -49,4 +53,35 @@ main {
     top: 100px;
     right: 80px;
     margin: 30px;
+}
+
+.villains {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.newVillain {
+    background-color: #f8be10;
+    color: white;
+    width: 300px;
+    height: 90px;
+    margin-top: 20px;
+}
+
+.mario-img {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+.mario-hp {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
 }

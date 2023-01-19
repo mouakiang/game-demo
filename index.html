@@ -30,11 +30,15 @@
 
         <main>
             <div>
-                <header id="defeated-count">You have defeated 0 villains</header>
+                <header class="defeated-count" id="defeated-count">
+                    You have defeated 0 villains
+                </header>
             </div>
             <div class="villain-container">
-                <h2>Mario's HP: <span id="player-hp">10</span></h2>
-                <div><img src="./assets/Mario.png" class="player-img" id="player-img" /></div>
+                <h2 class="mario-hp">Mario's hp: <span id="player-hp">10</span></h2>
+                <div class="mario-img">
+                    <img src="./assets/Mario.png" class="player-img" id="player-img" />
+                </div>
             </div>
             <div class="add-villain" id="add-villain">
                 <input id="villain-input" />
