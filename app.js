@@ -10,7 +10,7 @@ const defeatedCountEl = document.getElementById('defeated-count');
 
 /* State */
 let defeatedCount = 0;
-let playerHp = 5;
+let playerHp = 2;
 
 const villains = [
     {
@@ -58,7 +58,7 @@ function displayVillains() {
                 alert('Mama Mia!');
                 return;
             }
-            if (Math.random() > 0.5) {
+            if (Math.random() > 0.3) {
                 alert('Lets a go! Mario hit' + ' ' + villain.name);
                 villain.hp--;
 
@@ -69,7 +69,7 @@ function displayVillains() {
             } else {
                 alert('You missed' + ' ' + villain.name);
             }
-            if (Math.random() > 0.5) {
+            if (Math.random() > 0.4) {
                 alert('Bwuahaha!' + ' ' + villain.name + ' ' + 'hit you back!');
                 playerHp--;
 

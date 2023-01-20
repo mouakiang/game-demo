@@ -39,10 +39,11 @@ main {
 .defeated-count {
     width: 280px;
     height: 50px;
-    background-color: #e0102f;
+    background-color: #5d2e8e;
     font-family: New Super Mario Font U, sans-serif;
     border-radius: 10px;
     border: solid 3px #17419a;
+    color: #95a4ae;
 }
 
 .player-img {
@@ -79,6 +80,10 @@ main {
     border-radius: 10px;
 }
 
+.newVillain:hover {
+    background-color: #e0102f;
+}
+
 .mario-img {
     display: flex;
     justify-content: center;
@@ -93,7 +98,7 @@ p {
     display: flex;
     justify-content: center;
     font-size: 1.5rem;
-    color: white;
+    color: #e0102f;
     font-family: New Super Mario Font U, sans-serif;
     font-size: 40px;
 }
