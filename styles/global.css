@@ -85,3 +85,11 @@ p {
     font-size: 1.5rem;
     color: white;
 }
+
+.dead {
+    transform: rotate(-45deg);
+}
+
+.hide {
+    display: none;
+}

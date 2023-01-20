@@ -14,7 +14,9 @@ export function renderVillain(villain, playerHp) {
     }
     if (playerHp <= 0) {
         newVillainEl.disabled = true;
+        newVillainEl.classList.add('hide');
     }
+
     newVillainEl.classList.add('newVillain');
 
     newVillainEl.append(nameEl, hpEl, emojiEl);

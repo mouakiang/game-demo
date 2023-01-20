@@ -7,9 +7,12 @@ const playerImgEl = document.getElementById('player-img');
 const inputEl = document.getElementById('villain-input');
 const buttonEl = document.getElementById('villain-button');
 const defeatedCountEl = document.getElementById('defeated-count');
+// const gameOverEl = document.getElementById('game-over');
+// const resetBtn = document.getElementById('reset');
+
 /* State */
 let defeatedCount = 0;
-let playerHp = 10;
+let playerHp = 1;
 
 const villains = [
     {
@@ -54,7 +57,7 @@ function displayVillains() {
         // newVillainEl.setAttribute('id', 'game-over-button');
 
         newVillainEl.addEventListener('click', () => {
-            if (playerHp <= 0) {
+            if (playerHp === 0) {
                 alert('Mama Mia!');
                 return;
             }
@@ -65,6 +68,8 @@ function displayVillains() {
                 if (villain.hp === 0) {
                     defeatedCount++;
                     defeatedCountEl.textContent = `You have defeated ${defeatedCount} villains`;
+
+                    // toggleSections();
                 }
             } else {
                 alert('You missed' + ' ' + villain.name);
@@ -92,5 +97,9 @@ function displayVillains() {
         villainsEl.append(newVillainEl);
     }
 }
+
+// function toggleSections() {
+//     gameOverEl.classList.toggle('hide');
+// }
 
 displayVillains();
