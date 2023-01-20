@@ -15,6 +15,9 @@
 
         <!-- fonts -->
         <!-- see https://fonts.google.com/ -->
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/new-super-mario-font-u');
+        </style>
 
         <!-- css -->
         <link rel="stylesheet" href="styles/reset.css" />
@@ -34,6 +37,12 @@
                     You have defeated 0 villains
                 </header>
             </div>
+            <center>
+                <audio controls>
+                    <source src="./assets/01 Running About.mp3" type="audio/mp3" />
+                    Your browser does not support the audio tag.
+                </audio>
+            </center>
             <div class="villain-container">
                 <h2 class="mario-hp">Mario's hp: <span id="player-hp">10</span></h2>
                 <div class="mario-img">
@@ -45,11 +54,6 @@
                 <button id="villain-button">Add Villain</button>
             </div>
             <ul class="villains" id="villains"></ul>
-            <!-- 
-            <section id="game-over" class="game-over-hide">
-                <img class="image" src="./assets/gameover.png" alt="game over mario image" />
-                <button class="button" id="reset">Play Again</button>
-            </section> -->
         </main>
     </body>
 </html>
