@@ -30,12 +30,8 @@ const villains = [
 buttonEl.addEventListener('click', () => {
     const villainName = inputEl.value;
 
-    if (!villainName) {
-        return;
-    }
-
     const newVillain = {
-        name: villainName,
+        name: villainName || `villain ${Math.ceil(Math.random() * 50)}`,
         hp: Math.ceil(Math.random() * 5),
     };
 
