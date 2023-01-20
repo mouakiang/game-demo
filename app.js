@@ -12,7 +12,7 @@ const defeatedCountEl = document.getElementById('defeated-count');
 
 /* State */
 let defeatedCount = 0;
-let playerHp = 1;
+let playerHp = 5;
 
 const villains = [
     {
