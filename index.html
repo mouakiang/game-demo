@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Web App</title>
+        <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <!-- see https://fonts.google.com/ -->
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/new-super-mario-font-u');
+        </style>
 
-    <!-- fonts -->
-    <!-- see https://fonts.google.com/ -->
+        <!-- css -->
+        <link rel="stylesheet" href="styles/reset.css" />
+        <link rel="stylesheet" href="styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <!-- add link for page specific css -->
+    <body>
+        <header>
+            <img class="logo" src="assets/html_css_js.png" alt="logo" />
+            <h1>Mario</h1>
+        </header>
 
-</head>
-
-<body>
-    <header>
-        <img class="logo" src="assets/html_css_js.png" alt="logo">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <div>
+                <header class="defeated-count" id="defeated-count">
+                    You have defeated 0 villains
+                </header>
+            </div>
+            <center>
+                <audio controls>
+                    <source src="./assets/01 Running About.mp3" type="audio/mp3" />
+                    Your browser does not support the audio tag.
+                </audio>
+            </center>
+            <div class="villain-container">
+                <h2 class="mario-hp">Mario's hp: <span id="player-hp">10</span></h2>
+                <div class="mario-img">
+                    <img src="./assets/Mario.png" class="player-img" id="player-img" />
+                </div>
+            </div>
+            <div class="add-villain" id="add-villain">
+                <input id="villain-input" />
+                <button id="villain-button">Add Villain</button>
+            </div>
+            <ul class="villains" id="villains"></ul>
+        </main>
+    </body>
 </html>
